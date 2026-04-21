@@ -1,0 +1,34 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: axionauto2-postgres
+    environment:
+      POSTGRES_DB: axion_db
+      POSTGRES_USER: axion_user
+      POSTGRES_PASSWORD: axion_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U axion_user -d axion_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: axionauto2-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+  redis_data:
