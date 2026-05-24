@@ -1,0 +1,10 @@
+.git
+.env
+.m2
+target
+frontend
+apache-maven-3.9.6
+apache-maven-3.9.6-bin.zip
+*.log
+_remote_axionauto
+_remote_axionco

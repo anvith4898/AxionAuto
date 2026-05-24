@@ -69,11 +69,11 @@ axion:
       # Emit a WARN log when usage exceeds this % of the limit (for alerting)
       warning-threshold-pct: ${META_RATE_LIMIT_WARN_PCT:80}
   token:
-    encryption-key: ${TOKEN_ENCRYPTION_KEY:MDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODlhYmNkZWY=}
+    encryption-key: ${TOKEN_ENCRYPTION_KEY}
   oauth:
     state-ttl-seconds: ${OAUTH_STATE_TTL_SECONDS:600}
   auth:
-    token-secret: ${AUTH_TOKEN_SECRET:dev-phase1-launch-secret-change-me}
+    token-secret: ${AUTH_TOKEN_SECRET}
     session-ttl-seconds: ${AUTH_SESSION_TTL_SECONDS:604800}
   automation:
     default-cooldown-seconds: ${AUTOMATION_COOLDOWN_SECONDS:3600}

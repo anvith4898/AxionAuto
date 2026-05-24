@@ -183,6 +183,39 @@ cd C:\Users\anvit\OneDrive\Desktop\axionauto2
 mvn -s .mvn-local-settings.xml test
 ```
 
+Frontend dependency audit:
+
+```powershell
+cd C:\Users\anvit\OneDrive\Desktop\axionauto2\frontend
+npm audit --audit-level=moderate
+```
+
+## Docker Builds
+
+Backend image:
+
+```powershell
+cd C:\Users\anvit\OneDrive\Desktop\axionauto2
+docker build -t axionauto-backend .
+```
+
+Frontend image:
+
+```powershell
+cd C:\Users\anvit\OneDrive\Desktop\axionauto2\frontend
+docker build -t axionauto-frontend .
+```
+
+## Deployment
+
+Before moving from local Docker to real hosting, fill in the environment contract:
+
+```text
+docs/20_deploy_env_contract.md
+```
+
+The backend requires real `TOKEN_ENCRYPTION_KEY` and `AUTH_TOKEN_SECRET` values. It will not use unsafe defaults for deploy.
+
 ## Phase 1 Scope
 
 This repo is set up for a Phase 1 launch with:
